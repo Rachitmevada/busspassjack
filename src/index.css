@@ -1,0 +1,548 @@
+@import "tailwindcss";
+
+@font-face {
+  font-family: "Poppins:Medium";
+  src: url("https://static.figma.com/font/Poppins-Medium_6") format("woff2");
+  font-style: normal;
+  font-weight: 500;
+}
+
+@font-face {
+  font-family: "Poppins:Regular";
+  src: url("https://static.figma.com/font/Poppins-Regular_6") format("woff2");
+  font-style: normal;
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: "Poppins:SemiBold";
+  src: url("https://static.figma.com/font/Poppins-SemiBold_6") format("woff2");
+  font-style: normal;
+  font-weight: 600;
+}
+
+@layer base {
+  :root {
+    color: #000;
+    background: #f0f0f0;
+    font-family: "Poppins:Regular", sans-serif;
+    font-synthesis: none;
+  }
+
+  body {
+    min-width: 320px;
+    min-height: 100dvh;
+    overflow-x: hidden;
+  }
+}
+
+.app-shell {
+  position: relative;
+  min-height: 100dvh;
+  background: #f0f0f0;
+}
+
+.app-header {
+  position: relative;
+  z-index: 20;
+  display: flex;
+  height: 58px;
+  align-items: center;
+  gap: 17px;
+  padding: 0 16px 0 19px;
+  color: white;
+  background: #000;
+}
+
+.profile-photo {
+  width: 44px;
+  height: 44px;
+  flex: 0 0 44px;
+  border-radius: 999px;
+  object-fit: cover;
+  object-position: 50% 13%;
+}
+
+.student-info {
+  min-width: 0;
+  flex: 1;
+  line-height: normal;
+}
+
+.student-name {
+  overflow: hidden;
+  font-family: "Poppins:Regular", sans-serif;
+  font-size: 18px;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.student-meta {
+  overflow: hidden;
+  margin-top: 1px;
+  font-family: "Poppins:Regular", sans-serif;
+  font-size: 12px;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.menu-icon {
+  display: grid;
+  width: 26px;
+  height: 36px;
+  flex: 0 0 26px;
+  place-items: center;
+  border-radius: 6px;
+}
+
+.menu-icon img {
+  width: 17px;
+  height: 12px;
+}
+
+.dashboard {
+  width: 100%;
+  padding-bottom: 10px;
+}
+
+.dashboard section {
+  margin-top: 0;
+}
+
+.dashboard section:nth-of-type(1) {
+  margin-top: 9px;
+}
+
+.dashboard section:nth-of-type(2) {
+  margin-top: 16px;
+}
+
+.dashboard section:nth-of-type(3) {
+  margin-top: 13px;
+}
+
+.dashboard section:nth-of-type(4) {
+  margin-top: 11px;
+}
+
+.dashboard section:nth-of-type(5) {
+  margin-top: 40px;
+}
+
+.section-title {
+  display: flex;
+  width: 100%;
+  height: 33px;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 12px 0 13px;
+  text-align: left;
+}
+
+.section-title__label {
+  display: flex;
+  min-width: 0;
+  align-items: center;
+  gap: 8px;
+  font-family: "Poppins:Medium", sans-serif;
+  font-size: 18px;
+  line-height: normal;
+}
+
+.section-title__icon {
+  width: 15px;
+  height: 15px;
+  flex: 0 0 15px;
+  object-fit: contain;
+}
+
+.dashboard section:nth-of-type(5) .section-title__icon {
+  width: 18px;
+  height: 7px;
+  flex-basis: 18px;
+}
+
+.section-title__chevron {
+  width: 9px;
+  height: 16px;
+  flex: 0 0 auto;
+}
+
+.attendance-card,
+.fees-card {
+  display: flex;
+  min-height: 68px;
+  align-items: center;
+  margin: 0 12px;
+  border-radius: 11px;
+}
+
+.attendance-card {
+  gap: 14px;
+  padding: 7px 8px;
+  background: #fff;
+}
+
+.semester-box {
+  display: flex;
+  width: 72px;
+  height: 54px;
+  flex: 0 0 72px;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-radius: 6px;
+}
+
+.semester-box span {
+  font-family: "Poppins:SemiBold", sans-serif;
+  font-size: 12px;
+  line-height: normal;
+}
+
+.semester-box strong {
+  font-family: "Poppins:SemiBold", sans-serif;
+  font-size: 18px;
+  line-height: normal;
+}
+
+.semester-box--teal {
+  color: #1a5657;
+  background: #f2f8f8;
+}
+
+.semester-box--red {
+  color: #dd5346;
+  background: #f7edee;
+}
+
+.attendance-details {
+  min-width: 0;
+  flex: 1;
+}
+
+.attendance-details > p {
+  display: flex;
+  align-items: baseline;
+  gap: 12px;
+  font-family: "Poppins:Medium", sans-serif;
+  font-size: 15px;
+  line-height: 1.396;
+  white-space: nowrap;
+}
+
+.attendance-details > p span {
+  color: #a1a1a1;
+}
+
+.attendance-details > p strong {
+  overflow: hidden;
+  font-weight: 500;
+  text-overflow: ellipsis;
+}
+
+.attendance-progress {
+  display: flex;
+  align-items: center;
+  gap: 11px;
+  margin-top: 4px;
+}
+
+.attendance-progress img {
+  width: min(223px, calc(100% - 74px));
+  height: 5px;
+}
+
+.attendance-progress strong {
+  color: #2eb934;
+  font-family: "Poppins:Medium", sans-serif;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 1.396;
+  white-space: nowrap;
+}
+
+.fees-card {
+  position: relative;
+  min-height: 77px;
+  gap: 16px;
+  padding: 6px 4px 6px 7px;
+  border: 2px solid #fff;
+  background: #f5f5f5;
+}
+
+.fee-details {
+  display: flex;
+  min-width: 0;
+  flex: 1;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.fee-amount {
+  color: #eb483e;
+  font-family: "Poppins:SemiBold", sans-serif;
+  font-size: 23px;
+  font-weight: 600;
+  line-height: 1.396;
+  white-space: nowrap;
+}
+
+.fee-deadline {
+  display: flex;
+  align-items: center;
+  gap: 3px;
+  padding: 2px 5px;
+  border-radius: 6px;
+  color: #eb483e;
+  background: #f7edee;
+  font-family: "Poppins:Medium", sans-serif;
+  font-size: 10px;
+  line-height: 1.396;
+  white-space: nowrap;
+}
+
+.fee-deadline img {
+  width: 10px;
+  height: 9px;
+}
+
+.pay-button {
+  display: flex;
+  height: 25px;
+  min-width: 76px;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  align-self: flex-start;
+  margin-top: -2px;
+  border-radius: 7px;
+  color: white;
+  background: #3a8d40;
+  font-family: "Poppins:Medium", sans-serif;
+  font-size: 12px;
+  line-height: 1.396;
+}
+
+.pay-button img {
+  width: 10px;
+  height: 9px;
+}
+
+.timetable-card {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  margin: 0 12px;
+}
+
+.timetable-head {
+  display: flex;
+  width: 100%;
+  height: 39px;
+  flex: 0 0 39px;
+  overflow: hidden;
+  border-radius: 10px 10px 0 0;
+  background: #fff;
+}
+
+.timetable-date {
+  display: grid;
+  place-items: center;
+  width: 87px;
+  flex: 0 0 87px;
+  border-right: 2px solid #f0f0f0;
+  color: #757575;
+  font-family: "Poppins:SemiBold", sans-serif;
+  font-size: 18px;
+}
+
+.timetable-head-fill {
+  min-width: 0;
+  flex: 1;
+  background: #fff;
+}
+
+.timetable-empty {
+  display: grid;
+  width: 100%;
+  height: 53px;
+  flex: 0 0 53px;
+  place-items: center;
+  border-radius: 10px;
+  color: #adadad;
+  background: #fff;
+  font-family: "Poppins:Medium", sans-serif;
+  font-size: 18px;
+}
+
+.semester-detail {
+  margin-left: 3px;
+  color: #df534c;
+  font-family: "Poppins:SemiBold", sans-serif;
+  font-size: 12px;
+  line-height: 1.396;
+}
+
+.course-list {
+  display: flex;
+  gap: 10px;
+  overflow-x: auto;
+  padding: 0 13px 2px;
+  scrollbar-width: none;
+}
+
+.course-list::-webkit-scrollbar {
+  display: none;
+}
+
+.course-card {
+  display: flex;
+  width: 149px;
+  height: 76px;
+  flex: 0 0 149px;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px;
+  color: white;
+  background-color: #1a4845;
+  background-position: center;
+  background-size: cover;
+  font-family: "Poppins:Medium", sans-serif;
+  font-size: 13px;
+  line-height: 93.055%;
+  text-align: center;
+}
+
+.utility-grid {
+  display: grid;
+  min-height: 199px;
+  margin: 0 16px;
+  padding: 20px 4px 8px;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 31px 2px;
+  border-radius: 13px;
+  background: #fff;
+}
+
+.utility-item {
+  display: flex;
+  min-width: 0;
+  flex-direction: column;
+  align-items: center;
+  gap: 3px;
+  border-radius: 8px;
+}
+
+.utility-item > img,
+.transport-link,
+.transport-link img {
+  width: 46px;
+  height: 46px;
+  object-fit: contain;
+}
+
+.transport-link {
+  display: block;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.utility-item span {
+  display: block;
+  max-width: 100%;
+  overflow: hidden;
+  font-family: "Poppins:Medium", sans-serif;
+  font-size: 12px;
+  line-height: normal;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.app-version {
+  padding: 3px 0 8px;
+  color: #979797;
+  font-family: "Poppins:Medium", sans-serif;
+  font-size: 14px;
+  text-align: center;
+}
+
+.transport-page__content {
+  padding: 20px 16px;
+}
+
+.transport-page__title {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-family: "Poppins:Medium", sans-serif;
+  font-size: 22px;
+}
+
+.transport-page__title img {
+  width: 46px;
+  height: 46px;
+  object-fit: contain;
+}
+
+.transport-page__card {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-top: 18px;
+  padding: 18px;
+  border-radius: 13px;
+  background: #fff;
+}
+
+.transport-page__card img {
+  width: 60px;
+  height: 60px;
+  object-fit: contain;
+}
+
+.transport-page__card h2 {
+  font-family: "Poppins:Medium", sans-serif;
+  font-size: 18px;
+}
+
+.transport-page__card p {
+  margin-top: 3px;
+  color: #757575;
+  font-family: "Poppins:Regular", sans-serif;
+  font-size: 13px;
+}
+
+@media (min-width: 720px) {
+  .dashboard {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    align-items: start;
+    gap: 8px 18px;
+    padding: 12px 18px;
+  }
+
+  .dashboard section {
+    margin-top: 0;
+  }
+
+  .dashboard section:nth-of-type(4),
+  .dashboard section:nth-of-type(5),
+  .app-version {
+    grid-column: 1 / -1;
+  }
+
+  .course-list {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .course-card {
+    width: 100%;
+  }
+
+  .utility-grid {
+    gap: 24px 12px;
+  }
+}
